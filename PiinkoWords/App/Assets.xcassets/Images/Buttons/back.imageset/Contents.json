@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ion_caret-back.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
