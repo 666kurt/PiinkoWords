@@ -2,6 +2,9 @@ import SwiftUI
 
 // MARK: main
 struct WelcomeScreen: View {
+    
+    private let categories = GameData.shared.categories
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 22) {
@@ -21,8 +24,11 @@ extension WelcomeScreen {
     
     private var categoriesScrollView: some View {
         ScrollView(showsIndicators: false) {
-            ForEach(1...4, id: \.self) { _ in
-                WelcomeCardView(title: "Animals", image: "lion", onTap: {})
+            ForEach(categories, id: \.id) { category in
+                NavigationLink(destination: GameScreen(category: category)) {
+                    WelcomeCardView(title: category.name,
+                                    image: category.image)
+                }
             }
         }
     }

@@ -4,7 +4,6 @@ struct WelcomeCardView: View {
     
     let title: String
     let image: String
-    let onTap: () -> Void
     
     var body: some View {
         VStack(spacing: 12) {
@@ -18,28 +17,13 @@ struct WelcomeCardView: View {
                 .foregroundColor(Color(hex: "#2F19C8"))
                 .frame(height: 12)
         }
-        .padding(.top, 10)
-        .padding(.bottom, 20)
         .padding(.horizontal, 46)
-        .background(
-            LinearGradient(colors: [
-            Color(hex: "#0D00A1"),
-            Color(hex: "#320083"),
-            ],
-                           startPoint: .leading,
-                           endPoint: .trailing)
-        )
-        .clipShape(RoundedRectangle(cornerRadius: 20))
-        .onTapGesture {
-            onTap()
-        }
-        .padding(.bottom, 20)
+        .backgroundCardModifier()
     }
 }
 
 #Preview {
     WelcomeCardView(title: "Animals",
-                    image: "lion",
-                    onTap: {})
+                    image: "lion")
     .padding()
 }

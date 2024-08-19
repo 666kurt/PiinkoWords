@@ -15,4 +15,18 @@ extension Color {
         let blueValue = Double(rgb & 0xFF) / 255.0
         self.init(red: redValue, green: greenValue, blue: blueValue)
     }
+    
+    static var pinkGradient: RadialGradient {
+        return RadialGradient(colors: [Color(hex: "#FFFFFF"), Color(hex: "#FF0099")],
+                              center: .center,
+                              startRadius: 5,
+                              endRadius: 25)
+    }
+    
+    static var blueGradient: RadialGradient {
+        return RadialGradient(colors: [Color(hex: "#A1A9F8"), Color(hex: "#4655E0")],
+                              center: .center,
+                              startRadius: 5,
+                              endRadius: 25)
+    }
 }

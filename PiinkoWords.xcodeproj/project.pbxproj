@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC78B8C82C7346A80044DEAE /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8C72C7346A80044DEAE /* GameScreen.swift */; };
+		FC78B8CB2C7348100044DEAE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8CA2C7348100044DEAE /* Category.swift */; };
+		FC78B8CD2C73484A0044DEAE /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8CC2C73484A0044DEAE /* Word.swift */; };
+		FC78B8CF2C73489B0044DEAE /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8CE2C73489B0044DEAE /* GameData.swift */; };
+		FC78B8D12C734FC30044DEAE /* GameToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8D02C734FC30044DEAE /* GameToolBarView.swift */; };
+		FC78B8D32C73528F0044DEAE /* BackgroundCardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8D22C73528F0044DEAE /* BackgroundCardModifier.swift */; };
+		FC78B8D62C7369F90044DEAE /* LetterPositionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8D52C7369F90044DEAE /* LetterPositionCalculator.swift */; };
+		FC78B8D82C736AB90044DEAE /* GameLettersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8D72C736AB90044DEAE /* GameLettersView.swift */; };
+		FC78B8DA2C736B260044DEAE /* GameLetterCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8D92C736B260044DEAE /* GameLetterCircleView.swift */; };
+		FC78B8DC2C73B3E70044DEAE /* ShakeEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8DB2C73B3E70044DEAE /* ShakeEffect.swift */; };
+		FC78B8DE2C73B6590044DEAE /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8DD2C73B6590044DEAE /* GameLogic.swift */; };
 		FCEA25212C6F3A0400EE59F0 /* PiinkoWordsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA25202C6F3A0400EE59F0 /* PiinkoWordsApp.swift */; };
 		FCEA25232C6F3A0400EE59F0 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA25222C6F3A0400EE59F0 /* WelcomeScreen.swift */; };
 		FCEA25252C6F3A0500EE59F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEA25242C6F3A0500EE59F0 /* Assets.xcassets */; };
@@ -19,6 +30,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC78B8C72C7346A80044DEAE /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
+		FC78B8CA2C7348100044DEAE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		FC78B8CC2C73484A0044DEAE /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		FC78B8CE2C73489B0044DEAE /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
+		FC78B8D02C734FC30044DEAE /* GameToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToolBarView.swift; sourceTree = "<group>"; };
+		FC78B8D22C73528F0044DEAE /* BackgroundCardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundCardModifier.swift; sourceTree = "<group>"; };
+		FC78B8D52C7369F90044DEAE /* LetterPositionCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterPositionCalculator.swift; sourceTree = "<group>"; };
+		FC78B8D72C736AB90044DEAE /* GameLettersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLettersView.swift; sourceTree = "<group>"; };
+		FC78B8D92C736B260044DEAE /* GameLetterCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLetterCircleView.swift; sourceTree = "<group>"; };
+		FC78B8DB2C73B3E70044DEAE /* ShakeEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeEffect.swift; sourceTree = "<group>"; };
+		FC78B8DD2C73B6590044DEAE /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		FCEA251D2C6F3A0400EE59F0 /* PiinkoWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiinkoWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEA25202C6F3A0400EE59F0 /* PiinkoWordsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiinkoWordsApp.swift; sourceTree = "<group>"; };
 		FCEA25222C6F3A0400EE59F0 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
@@ -42,6 +64,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC78B8C62C73469C0044DEAE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FC78B8D02C734FC30044DEAE /* GameToolBarView.swift */,
+				FC78B8D72C736AB90044DEAE /* GameLettersView.swift */,
+				FC78B8D92C736B260044DEAE /* GameLetterCircleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FC78B8C92C7347F40044DEAE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FC78B8CA2C7348100044DEAE /* Category.swift */,
+				FC78B8CC2C73484A0044DEAE /* Word.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FC78B8D42C7369E50044DEAE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FC78B8D52C7369F90044DEAE /* LetterPositionCalculator.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		FCEA25142C6F3A0400EE59F0 = {
 			isa = PBXGroup;
 			children = (
@@ -64,7 +113,9 @@
 				FCEA252F2C6F3A5E00EE59F0 /* App */,
 				FCEA252E2C6F3A5400EE59F0 /* Screens */,
 				FCEA25302C6F3A6500EE59F0 /* DataManager */,
+				FC78B8C92C7347F40044DEAE /* Models */,
 				FCEA253E2C6F4B3F00EE59F0 /* Modifiers */,
+				FC78B8D42C7369E50044DEAE /* Helpers */,
 				FCEA25352C6F3B0000EE59F0 /* Extensions */,
 				FCEA25452C6F5BC500EE59F0 /* Font */,
 				FCEA25262C6F3A0500EE59F0 /* Preview Content */,
@@ -103,6 +154,7 @@
 		FCEA25302C6F3A6500EE59F0 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				FC78B8CE2C73489B0044DEAE /* GameData.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -119,6 +171,9 @@
 		FCEA25332C6F3ABC00EE59F0 /* GameScreen */ = {
 			isa = PBXGroup;
 			children = (
+				FC78B8C72C7346A80044DEAE /* GameScreen.swift */,
+				FC78B8DD2C73B6590044DEAE /* GameLogic.swift */,
+				FC78B8C62C73469C0044DEAE /* View */,
 			);
 			path = GameScreen;
 			sourceTree = "<group>";
@@ -159,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				FCEA253F2C6F4B4D00EE59F0 /* CustomVStackModifier.swift */,
+				FC78B8D22C73528F0044DEAE /* BackgroundCardModifier.swift */,
+				FC78B8DB2C73B3E70044DEAE /* ShakeEffect.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -248,11 +305,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC78B8D62C7369F90044DEAE /* LetterPositionCalculator.swift in Sources */,
+				FC78B8DA2C736B260044DEAE /* GameLetterCircleView.swift in Sources */,
 				FCEA25442C6F4E3500EE59F0 /* SettingButtonView.swift in Sources */,
 				FCEA25232C6F3A0400EE59F0 /* WelcomeScreen.swift in Sources */,
 				FCEA25402C6F4B4D00EE59F0 /* CustomVStackModifier.swift in Sources */,
 				FCEA25212C6F3A0400EE59F0 /* PiinkoWordsApp.swift in Sources */,
+				FC78B8CF2C73489B0044DEAE /* GameData.swift in Sources */,
 				FCEA25372C6F3BDB00EE59F0 /* WelcomeCardView.swift in Sources */,
+				FC78B8CB2C7348100044DEAE /* Category.swift in Sources */,
+				FC78B8D32C73528F0044DEAE /* BackgroundCardModifier.swift in Sources */,
+				FC78B8C82C7346A80044DEAE /* GameScreen.swift in Sources */,
+				FC78B8D82C736AB90044DEAE /* GameLettersView.swift in Sources */,
+				FC78B8DE2C73B6590044DEAE /* GameLogic.swift in Sources */,
+				FC78B8DC2C73B3E70044DEAE /* ShakeEffect.swift in Sources */,
+				FC78B8D12C734FC30044DEAE /* GameToolBarView.swift in Sources */,
+				FC78B8CD2C73484A0044DEAE /* Word.swift in Sources */,
 				FCEA253D2C6F49EA00EE59F0 /* SettingsScreen.swift in Sources */,
 				FCEA253A2C6F3C1A00EE59F0 /* Color+extensions.swift in Sources */,
 			);
