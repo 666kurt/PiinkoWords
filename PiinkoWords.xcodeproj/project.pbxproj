@@ -18,6 +18,11 @@
 		FC78B8DA2C736B260044DEAE /* GameLetterCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8D92C736B260044DEAE /* GameLetterCircleView.swift */; };
 		FC78B8DC2C73B3E70044DEAE /* ShakeEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8DB2C73B3E70044DEAE /* ShakeEffect.swift */; };
 		FC78B8DE2C73B6590044DEAE /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8DD2C73B6590044DEAE /* GameLogic.swift */; };
+		FC78B8E02C74926F0044DEAE /* GameLosePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8DF2C74926F0044DEAE /* GameLosePopUpView.swift */; };
+		FC78B8E32C74A5800044DEAE /* GameWinPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8E22C74A5800044DEAE /* GameWinPopUpView.swift */; };
+		FC78B8E52C74ABFE0044DEAE /* GameExitPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8E42C74ABFE0044DEAE /* GameExitPopUpView.swift */; };
+		FC78B8E72C75119E0044DEAE /* GameProgressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8E62C75119E0044DEAE /* GameProgressManager.swift */; };
+		FC78B8E92C7524CE0044DEAE /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8E82C7524CE0044DEAE /* SplashScreen.swift */; };
 		FCEA25212C6F3A0400EE59F0 /* PiinkoWordsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA25202C6F3A0400EE59F0 /* PiinkoWordsApp.swift */; };
 		FCEA25232C6F3A0400EE59F0 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA25222C6F3A0400EE59F0 /* WelcomeScreen.swift */; };
 		FCEA25252C6F3A0500EE59F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEA25242C6F3A0500EE59F0 /* Assets.xcassets */; };
@@ -41,6 +46,11 @@
 		FC78B8D92C736B260044DEAE /* GameLetterCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLetterCircleView.swift; sourceTree = "<group>"; };
 		FC78B8DB2C73B3E70044DEAE /* ShakeEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeEffect.swift; sourceTree = "<group>"; };
 		FC78B8DD2C73B6590044DEAE /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
+		FC78B8DF2C74926F0044DEAE /* GameLosePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLosePopUpView.swift; sourceTree = "<group>"; };
+		FC78B8E22C74A5800044DEAE /* GameWinPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWinPopUpView.swift; sourceTree = "<group>"; };
+		FC78B8E42C74ABFE0044DEAE /* GameExitPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameExitPopUpView.swift; sourceTree = "<group>"; };
+		FC78B8E62C75119E0044DEAE /* GameProgressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProgressManager.swift; sourceTree = "<group>"; };
+		FC78B8E82C7524CE0044DEAE /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		FCEA251D2C6F3A0400EE59F0 /* PiinkoWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiinkoWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEA25202C6F3A0400EE59F0 /* PiinkoWordsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiinkoWordsApp.swift; sourceTree = "<group>"; };
 		FCEA25222C6F3A0400EE59F0 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
@@ -70,6 +80,9 @@
 				FC78B8D02C734FC30044DEAE /* GameToolBarView.swift */,
 				FC78B8D72C736AB90044DEAE /* GameLettersView.swift */,
 				FC78B8D92C736B260044DEAE /* GameLetterCircleView.swift */,
+				FC78B8DF2C74926F0044DEAE /* GameLosePopUpView.swift */,
+				FC78B8E22C74A5800044DEAE /* GameWinPopUpView.swift */,
+				FC78B8E42C74ABFE0044DEAE /* GameExitPopUpView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +186,7 @@
 			children = (
 				FC78B8C72C7346A80044DEAE /* GameScreen.swift */,
 				FC78B8DD2C73B6590044DEAE /* GameLogic.swift */,
+				FC78B8E62C75119E0044DEAE /* GameProgressManager.swift */,
 				FC78B8C62C73469C0044DEAE /* View */,
 			);
 			path = GameScreen;
@@ -181,6 +195,7 @@
 		FCEA25342C6F3ADF00EE59F0 /* Onboarding&Splash */ = {
 			isa = PBXGroup;
 			children = (
+				FC78B8E82C7524CE0044DEAE /* SplashScreen.swift */,
 			);
 			path = "Onboarding&Splash";
 			sourceTree = "<group>";
@@ -307,7 +322,9 @@
 			files = (
 				FC78B8D62C7369F90044DEAE /* LetterPositionCalculator.swift in Sources */,
 				FC78B8DA2C736B260044DEAE /* GameLetterCircleView.swift in Sources */,
+				FC78B8E02C74926F0044DEAE /* GameLosePopUpView.swift in Sources */,
 				FCEA25442C6F4E3500EE59F0 /* SettingButtonView.swift in Sources */,
+				FC78B8E32C74A5800044DEAE /* GameWinPopUpView.swift in Sources */,
 				FCEA25232C6F3A0400EE59F0 /* WelcomeScreen.swift in Sources */,
 				FCEA25402C6F4B4D00EE59F0 /* CustomVStackModifier.swift in Sources */,
 				FCEA25212C6F3A0400EE59F0 /* PiinkoWordsApp.swift in Sources */,
@@ -315,13 +332,16 @@
 				FCEA25372C6F3BDB00EE59F0 /* WelcomeCardView.swift in Sources */,
 				FC78B8CB2C7348100044DEAE /* Category.swift in Sources */,
 				FC78B8D32C73528F0044DEAE /* BackgroundCardModifier.swift in Sources */,
+				FC78B8E52C74ABFE0044DEAE /* GameExitPopUpView.swift in Sources */,
 				FC78B8C82C7346A80044DEAE /* GameScreen.swift in Sources */,
 				FC78B8D82C736AB90044DEAE /* GameLettersView.swift in Sources */,
 				FC78B8DE2C73B6590044DEAE /* GameLogic.swift in Sources */,
 				FC78B8DC2C73B3E70044DEAE /* ShakeEffect.swift in Sources */,
+				FC78B8E92C7524CE0044DEAE /* SplashScreen.swift in Sources */,
 				FC78B8D12C734FC30044DEAE /* GameToolBarView.swift in Sources */,
 				FC78B8CD2C73484A0044DEAE /* Word.swift in Sources */,
 				FCEA253D2C6F49EA00EE59F0 /* SettingsScreen.swift in Sources */,
+				FC78B8E72C75119E0044DEAE /* GameProgressManager.swift in Sources */,
 				FCEA253A2C6F3C1A00EE59F0 /* Color+extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

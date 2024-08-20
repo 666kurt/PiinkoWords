@@ -25,9 +25,17 @@ extension WelcomeScreen {
     private var categoriesScrollView: some View {
         ScrollView(showsIndicators: false) {
             ForEach(categories, id: \.id) { category in
+                let completedWords = GameProgressManager.shared.progress(for: category)
+                let totalWords = category.words.count
+                let progress = CGFloat(completedWords) / CGFloat(totalWords)
+                
                 NavigationLink(destination: GameScreen(category: category)) {
                     WelcomeCardView(title: category.name,
-                                    image: category.image)
+                                    image: category.image,
+                                    progress: progress)
+                    .onAppear {
+                        print("Category: \(category.name), CompletedWords: \(completedWords), TotalWords: \(totalWords), Progress: \(progress)")
+                    }
                 }
             }
         }

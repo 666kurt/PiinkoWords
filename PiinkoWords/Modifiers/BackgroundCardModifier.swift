@@ -19,8 +19,6 @@ struct BackgroundCardModifier: ViewModifier {
                            endPoint: .trailing)
         )
         .clipShape(RoundedRectangle(cornerRadius: 20))
-        .padding(.bottom, 20)
-        
     }
     
 }

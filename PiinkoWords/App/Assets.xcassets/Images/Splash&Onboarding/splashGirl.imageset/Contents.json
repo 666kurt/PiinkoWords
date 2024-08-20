@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "a-girl-with-glasses-with-a-pointer-in-her-hand.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

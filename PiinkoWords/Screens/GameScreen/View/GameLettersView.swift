@@ -8,19 +8,16 @@ struct GameLettersView: View {
     var body: some View {
         HStack {
             ForEach(0..<totalLetters, id: \.self) { index in
-                Circle()
-                    .stroke(Color.clear, lineWidth: 1)
-                    .background(
-                        Circle().fill(index < selectedLetters.count
-                                      ? Color.pinkGradient
-                                      : Color.blueGradient)
-                    )
-                    .frame(width: 60, height: 60)
-                    .overlay(
-                        Text(selectedLetters.indices.contains(index) ? selectedLetters[index] : "")
-                            .font(.system(size: 32, weight: .semibold))
-                            .foregroundColor(Color(hex: "#5B41FF"))
-                    )
+                Image(index < selectedLetters.count
+                      ? "circlePink"
+                      : "circleBlue")
+                .resizable()
+                .frame(width: 60, height: 60)
+                .overlay(
+                    Text(selectedLetters.indices.contains(index) ? selectedLetters[index] : "")
+                        .font(.system(size: 32, weight: .semibold))
+                        .foregroundColor(Color(hex: "#5B41FF"))
+                )
             }
         }
         .padding(7)
