@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC5D0F2B2C80886B00823694 /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D0F2A2C80886B00823694 /* OnboardingScreen.swift */; };
+		FC5D0F2D2C809C5400823694 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D0F2C2C809C5400823694 /* AudioManager.swift */; };
+		FC5D0F302C80A73000823694 /* welcomeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC5D0F2F2C80A73000823694 /* welcomeSound.mp3 */; };
+		FC5D0F352C80ABD700823694 /* loseSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = FC5D0F312C80ABD700823694 /* loseSound.wav */; };
+		FC5D0F362C80ABD700823694 /* bgSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC5D0F322C80ABD700823694 /* bgSound.mp3 */; };
+		FC5D0F372C80ABD700823694 /* winSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC5D0F332C80ABD700823694 /* winSound.mp3 */; };
+		FC5D0F382C80ABD700823694 /* exitSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC5D0F342C80ABD700823694 /* exitSound.mp3 */; };
 		FC78B8C82C7346A80044DEAE /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8C72C7346A80044DEAE /* GameScreen.swift */; };
 		FC78B8CB2C7348100044DEAE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8CA2C7348100044DEAE /* Category.swift */; };
 		FC78B8CD2C73484A0044DEAE /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8CC2C73484A0044DEAE /* Word.swift */; };
@@ -21,7 +28,6 @@
 		FC78B8E02C74926F0044DEAE /* GameLosePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8DF2C74926F0044DEAE /* GameLosePopUpView.swift */; };
 		FC78B8E32C74A5800044DEAE /* GameWinPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8E22C74A5800044DEAE /* GameWinPopUpView.swift */; };
 		FC78B8E52C74ABFE0044DEAE /* GameExitPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8E42C74ABFE0044DEAE /* GameExitPopUpView.swift */; };
-		FC78B8E72C75119E0044DEAE /* GameProgressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8E62C75119E0044DEAE /* GameProgressManager.swift */; };
 		FC78B8E92C7524CE0044DEAE /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8E82C7524CE0044DEAE /* SplashScreen.swift */; };
 		FCEA25212C6F3A0400EE59F0 /* PiinkoWordsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA25202C6F3A0400EE59F0 /* PiinkoWordsApp.swift */; };
 		FCEA25232C6F3A0400EE59F0 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA25222C6F3A0400EE59F0 /* WelcomeScreen.swift */; };
@@ -35,6 +41,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC5D0F2A2C80886B00823694 /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
+		FC5D0F2C2C809C5400823694 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		FC5D0F2F2C80A73000823694 /* welcomeSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = welcomeSound.mp3; path = ../../../../../Downloads/welcomeSound.mp3; sourceTree = "<group>"; };
+		FC5D0F312C80ABD700823694 /* loseSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = loseSound.wav; path = ../../../../../Downloads/loseSound.wav; sourceTree = "<group>"; };
+		FC5D0F322C80ABD700823694 /* bgSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bgSound.mp3; path = ../../../../../Downloads/bgSound.mp3; sourceTree = "<group>"; };
+		FC5D0F332C80ABD700823694 /* winSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = winSound.mp3; path = ../../../../../Downloads/winSound.mp3; sourceTree = "<group>"; };
+		FC5D0F342C80ABD700823694 /* exitSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = exitSound.mp3; path = ../../../../../Downloads/exitSound.mp3; sourceTree = "<group>"; };
 		FC78B8C72C7346A80044DEAE /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
 		FC78B8CA2C7348100044DEAE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		FC78B8CC2C73484A0044DEAE /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
@@ -49,7 +62,6 @@
 		FC78B8DF2C74926F0044DEAE /* GameLosePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLosePopUpView.swift; sourceTree = "<group>"; };
 		FC78B8E22C74A5800044DEAE /* GameWinPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWinPopUpView.swift; sourceTree = "<group>"; };
 		FC78B8E42C74ABFE0044DEAE /* GameExitPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameExitPopUpView.swift; sourceTree = "<group>"; };
-		FC78B8E62C75119E0044DEAE /* GameProgressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProgressManager.swift; sourceTree = "<group>"; };
 		FC78B8E82C7524CE0044DEAE /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		FCEA251D2C6F3A0400EE59F0 /* PiinkoWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiinkoWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEA25202C6F3A0400EE59F0 /* PiinkoWordsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiinkoWordsApp.swift; sourceTree = "<group>"; };
@@ -74,6 +86,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC5D0F2E2C80A71500823694 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				FC5D0F332C80ABD700823694 /* winSound.mp3 */,
+				FC5D0F312C80ABD700823694 /* loseSound.wav */,
+				FC5D0F342C80ABD700823694 /* exitSound.mp3 */,
+				FC5D0F322C80ABD700823694 /* bgSound.mp3 */,
+				FC5D0F2F2C80A73000823694 /* welcomeSound.mp3 */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		FC78B8C62C73469C0044DEAE /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				FC78B8D52C7369F90044DEAE /* LetterPositionCalculator.swift */,
+				FC5D0F2C2C809C5400823694 /* AudioManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -131,6 +156,7 @@
 				FC78B8D42C7369E50044DEAE /* Helpers */,
 				FCEA25352C6F3B0000EE59F0 /* Extensions */,
 				FCEA25452C6F5BC500EE59F0 /* Font */,
+				FC5D0F2E2C80A71500823694 /* Music */,
 				FCEA25262C6F3A0500EE59F0 /* Preview Content */,
 			);
 			path = PiinkoWords;
@@ -186,7 +212,6 @@
 			children = (
 				FC78B8C72C7346A80044DEAE /* GameScreen.swift */,
 				FC78B8DD2C73B6590044DEAE /* GameLogic.swift */,
-				FC78B8E62C75119E0044DEAE /* GameProgressManager.swift */,
 				FC78B8C62C73469C0044DEAE /* View */,
 			);
 			path = GameScreen;
@@ -196,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				FC78B8E82C7524CE0044DEAE /* SplashScreen.swift */,
+				FC5D0F2A2C80886B00823694 /* OnboardingScreen.swift */,
 			);
 			path = "Onboarding&Splash";
 			sourceTree = "<group>";
@@ -309,7 +335,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCEA25282C6F3A0500EE59F0 /* Preview Assets.xcassets in Resources */,
+				FC5D0F382C80ABD700823694 /* exitSound.mp3 in Resources */,
 				FCEA25252C6F3A0500EE59F0 /* Assets.xcassets in Resources */,
+				FC5D0F302C80A73000823694 /* welcomeSound.mp3 in Resources */,
+				FC5D0F362C80ABD700823694 /* bgSound.mp3 in Resources */,
+				FC5D0F352C80ABD700823694 /* loseSound.wav in Resources */,
+				FC5D0F372C80ABD700823694 /* winSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,14 +365,15 @@
 				FC78B8D32C73528F0044DEAE /* BackgroundCardModifier.swift in Sources */,
 				FC78B8E52C74ABFE0044DEAE /* GameExitPopUpView.swift in Sources */,
 				FC78B8C82C7346A80044DEAE /* GameScreen.swift in Sources */,
+				FC5D0F2B2C80886B00823694 /* OnboardingScreen.swift in Sources */,
 				FC78B8D82C736AB90044DEAE /* GameLettersView.swift in Sources */,
 				FC78B8DE2C73B6590044DEAE /* GameLogic.swift in Sources */,
 				FC78B8DC2C73B3E70044DEAE /* ShakeEffect.swift in Sources */,
+				FC5D0F2D2C809C5400823694 /* AudioManager.swift in Sources */,
 				FC78B8E92C7524CE0044DEAE /* SplashScreen.swift in Sources */,
 				FC78B8D12C734FC30044DEAE /* GameToolBarView.swift in Sources */,
 				FC78B8CD2C73484A0044DEAE /* Word.swift in Sources */,
 				FCEA253D2C6F49EA00EE59F0 /* SettingsScreen.swift in Sources */,
-				FC78B8E72C75119E0044DEAE /* GameProgressManager.swift in Sources */,
 				FCEA253A2C6F3C1A00EE59F0 /* Color+extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

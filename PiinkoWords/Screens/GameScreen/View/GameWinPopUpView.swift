@@ -2,22 +2,16 @@ import SwiftUI
 
 struct GameWinPopUpView: View {
     
+    @StateObject private var audioManager = AudioManager.shared
     @Environment(\.presentationMode) var presentationMode
     @Binding var showPopUp: Bool
     
     var elapsedTime: Int
-    var onContinue: () -> Void
-    var onExitToMainMenu: () -> Void
     
     var body: some View {
         ZStack {
             
             Color(.black).opacity(0.5).ignoresSafeArea()
-                .onTapGesture {
-                    withAnimation {
-                        showPopUp = false
-                    }
-                }
             
             ZStack {
                 
@@ -32,10 +26,8 @@ struct GameWinPopUpView: View {
                         .foregroundColor(.white)
                     
                     Button {
-                        withAnimation {
-                            showPopUp = false
-                        }
-                        onContinue()
+                        showPopUp = false
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Image("winMainMenu")
                             .resizable()
@@ -45,8 +37,13 @@ struct GameWinPopUpView: View {
                 }
                 
             }
-            .offset(y: showPopUp ? 0 : UIScreen.main.bounds.height)
-            .animation(.spring(), value: showPopUp)
+        }
+        .onAppear() {
+            audioManager.loadSound(named: "winSound", withExtension: "mp3")
+            audioManager.playSound(named: "winSound")
+        }
+        .onDisappear() {
+            audioManager.stopSound(named: "winSound")
         }
     }
     
@@ -58,5 +55,5 @@ struct GameWinPopUpView: View {
 }
 
 #Preview {
-    GameWinPopUpView(showPopUp: .constant(true), elapsedTime: 160, onContinue: {}, onExitToMainMenu: {})
+    GameWinPopUpView(showPopUp: .constant(true), elapsedTime: 45)
 }

@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct GameExitPopUpView: View {
+    
+    @StateObject private var audioManager = AudioManager.shared
     @Environment(\.presentationMode) var presentationMode
     @Binding var showPopUp: Bool
     
     var elapsedTime: Int
-    var onContinue: () -> Void
-    var onExitToMainMenu: () -> Void
     
     var body: some View {
         ZStack {
@@ -26,10 +26,7 @@ struct GameExitPopUpView: View {
                         .foregroundColor(.white)
                     
                     Button {
-                        withAnimation {
-                            showPopUp = false
-                        }
-                        onContinue()
+                        showPopUp = false
                     } label: {
                         Image("continueExit")
                             .resizable()
@@ -37,10 +34,7 @@ struct GameExitPopUpView: View {
                     }
                     
                     Button {
-                        withAnimation {
-                            presentationMode.wrappedValue.dismiss()
-                        }
-                        onExitToMainMenu()
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         Image("exitExit")
                             .resizable()
@@ -53,6 +47,13 @@ struct GameExitPopUpView: View {
             .offset(y: showPopUp ? 0 : UIScreen.main.bounds.height)
             .animation(.spring(), value: showPopUp)
         }
+        .onAppear() {
+            audioManager.loadSound(named: "exitSound", withExtension: "mp3")
+            audioManager.playSound(named: "exitSound")
+        }
+        .onDisappear() {
+            audioManager.stopSound(named: "exitSound")
+        }
     }
     
     private func formatElapsedTime(_ time: Int) -> String {
@@ -63,5 +64,5 @@ struct GameExitPopUpView: View {
 }
 
 #Preview {
-    GameExitPopUpView(showPopUp: .constant(true), elapsedTime: 180, onContinue: {}, onExitToMainMenu: {})
+    GameExitPopUpView(showPopUp: .constant(true), elapsedTime: 180)
 }

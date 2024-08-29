@@ -1,42 +1,39 @@
 import SwiftUI
 
-class GameLogic: ObservableObject {
+final class GameLogic: ObservableObject {
     
-    let category: Category
+    @ObservedObject var category: Category
     @Published var currentWordIndex = 0
     @Published var selectedLetters: [(letter: String, index: Int)] = []
     @Published var selectedLetterPositions: [CGPoint] = []
     @Published var shuffledLetters: [Character] = []
     @Published var correctLetters: Set<Int> = []
     @Published var canProceedToNextWord = false
-    
+        
     init(category: Category) {
         self.category = category
-        self.currentWordIndex = GameProgressManager.shared.progress(for: category)
         self.shuffledLetters = category.words[currentWordIndex].text.shuffled()
     }
 
     func handleLetterSelection(letter: String, letterPosition: CGPoint, letterIndex: Int) {
-        let currentWord = category.words[currentWordIndex].text
-        
-        let alreadySelectedCount = selectedLetters.filter { $0.letter == letter }.count
-        let totalOccurrencesInWord = currentWord.filter { String($0) == letter }.count
-        
-        if currentWord.contains(letter) && alreadySelectedCount < totalOccurrencesInWord && !selectedLetters.contains(where: { $0.index == letterIndex }) {
-            selectedLetters.append((letter: letter, index: letterIndex))
-            selectedLetterPositions.append(letterPosition)
-            correctLetters.insert(letterIndex)
+            let currentWord = category.words[currentWordIndex].text
+            
+            let alreadySelectedCount = selectedLetters.filter { $0.letter == letter }.count
+            let totalOccurrencesInWord = currentWord.filter { String($0) == letter }.count
+            
+            if currentWord.contains(letter) && alreadySelectedCount < totalOccurrencesInWord && !selectedLetters.contains(where: { $0.index == letterIndex }) {
+                selectedLetters.append((letter: letter, index: letterIndex))
+                selectedLetterPositions.append(letterPosition)
+                correctLetters.insert(letterIndex)
+            }
+            
+            if selectedLetters.map({ $0.letter }).joined() == currentWord {
+                canProceedToNextWord = true
+            } else if selectedLetters.count == currentWord.count && selectedLetters.map({ $0.letter }).joined() != currentWord {
+                triggerVibration()
+                resetSelection()
+            }
         }
-        
-        if selectedLetters.map({ $0.letter }).joined() == currentWord {
-            canProceedToNextWord = true
-            let newProgress = currentWordIndex + 1
-            GameProgressManager.shared.saveProgress(for: category, completedWords: newProgress)
-        } else if selectedLetters.count == currentWord.count && selectedLetters.map({ $0.letter }).joined() != currentWord {
-            triggerVibration()
-            resetSelection()
-        }
-    }
     
     private func triggerVibration() {
         let generator = UINotificationFeedbackGenerator()
@@ -51,20 +48,26 @@ class GameLogic: ObservableObject {
     }
     
     func nextWord() {
+        if selectedLetters.map({ $0.letter }).joined() == category.words[currentWordIndex].text {
+            category.guessedWordsCount += 1
+        }
+
         if currentWordIndex < category.words.count - 1 {
             currentWordIndex += 1
             resetSelection()
             shuffledLetters = category.words[currentWordIndex].text.shuffled()
+        } else {
+            currentWordIndex = category.words.count
         }
     }
+
     
     func resetGame() {
-        GameProgressManager.shared.resetProgress(for: category)
         currentWordIndex = 0
         resetSelection()
         shuffledLetters = category.words[currentWordIndex].text.shuffled()
     }
-    
+
     func boundaryPoint(from: CGPoint, to: CGPoint, radius: CGFloat = 40) -> CGPoint {
         let vector = CGPoint(x: to.x - from.x, y: to.y - from.y)
         let length = sqrt(vector.x * vector.x + vector.y * vector.y)

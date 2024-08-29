@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "lets-icons_sound-max-fill.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

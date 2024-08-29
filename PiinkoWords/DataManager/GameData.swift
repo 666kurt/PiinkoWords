@@ -1,11 +1,11 @@
 import Foundation
 
-class GameData {
+final class GameData: ObservableObject {
     
     static let shared = GameData()
     private init() {}
     
-    let categories: [Category] = [
+    @Published var categories: [Category] = [
         Category(name: "Animals",
                  image: "lion",
                  words: [
@@ -15,7 +15,6 @@ class GameData {
                     Word(text: "fish", image: "fish"),
                     Word(text: "bear", image: "bear"),
                     Word(text: "koala", image: "koala"),
-                    Word(text: "bunny", image: "bunny"),
                 ]),
         Category(name: "Fruits",
                  image: "lime",
@@ -50,3 +49,4 @@ class GameData {
     ]
     
 }
+

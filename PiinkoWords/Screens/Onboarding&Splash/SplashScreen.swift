@@ -38,13 +38,13 @@ struct SplashScreen: View {
         .onAppear {
             startLoading()
         }
-//        .fullScreenCover(isPresented: $isActive) {
-//            if showOnboarding {
-//                OnboardingScreen(showOnboarding: $showOnboarding)
-//            } else {
-//                WelcomeScreen()
-//            }
-//        }
+        .fullScreenCover(isPresented: $isActive) {
+            if showOnboarding {
+                OnboardingScreen(showOnboarding: $showOnboarding)
+            } else {
+                WelcomeScreen()
+            }
+        }
     }
     
     func startLoading() {
@@ -60,5 +60,5 @@ struct SplashScreen: View {
 }
 
 #Preview {
-    SplashScreen(showOnboarding: .constant(false))
+    SplashScreen(showOnboarding: .constant(true))
 }

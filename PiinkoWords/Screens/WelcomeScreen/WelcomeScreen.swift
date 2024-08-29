@@ -3,7 +3,8 @@ import SwiftUI
 // MARK: main
 struct WelcomeScreen: View {
     
-    private let categories = GameData.shared.categories
+    @StateObject private var categories = GameData.shared
+    @StateObject private var audioManager = AudioManager.shared
     
     var body: some View {
         NavigationView {
@@ -16,6 +17,14 @@ struct WelcomeScreen: View {
             }
             .customVStack()
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear {
+            audioManager.loadSound(named: "welcomeSound", withExtension: "mp3")
+            audioManager.playSound(named: "welcomeSound", loop: true)
+        }
+        .onDisappear {
+            audioManager.stopSound(named: "welcomeSound")
+        }
     }
 }
 
@@ -24,18 +33,9 @@ extension WelcomeScreen {
     
     private var categoriesScrollView: some View {
         ScrollView(showsIndicators: false) {
-            ForEach(categories, id: \.id) { category in
-                let completedWords = GameProgressManager.shared.progress(for: category)
-                let totalWords = category.words.count
-                let progress = CGFloat(completedWords) / CGFloat(totalWords)
-                
+            ForEach(categories.categories, id: \.id) { category in
                 NavigationLink(destination: GameScreen(category: category)) {
-                    WelcomeCardView(title: category.name,
-                                    image: category.image,
-                                    progress: progress)
-                    .onAppear {
-                        print("Category: \(category.name), CompletedWords: \(completedWords), TotalWords: \(totalWords), Progress: \(progress)")
-                    }
+                    WelcomeCardView(category: category)
                 }
             }
         }
@@ -44,33 +44,30 @@ extension WelcomeScreen {
     private var headerView: some View {
         HStack {
             HStack() {
-                
-                Text("Random")
-                    .font(.system(size: 24, weight: .bold))
-                    .foregroundColor(.white)
-                
-                Spacer()
-                
-                HStack {
-                    Text("+5 min")
-                        .font(.system(size: 16, weight: .bold))
+                NavigationLink {
+                    let randomWordsCategory = createRandomCategory()
+                    GameScreen(category: randomWordsCategory)
+                        .environmentObject(audioManager)
+                } label: {
+                    Text("Random")
+                        .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.white)
-                    Image("adds")
-                        .resizable()
-                        .frame(width: 22, height: 24)
                 }
-                .padding(.horizontal, 6)
-                .padding(.vertical, 10)
-                .background(Color(hex: "#FF0000"))
-                .clipShape(Capsule())
-                
             }
             .padding(.vertical, 8)
             .padding(.trailing, 8)
             .padding(.leading, 12)
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .background(Color(hex: "##1800AE"))
             .clipShape(Capsule())
+            
+            Button {
+                audioManager.toggleSound(named: "welcomeSound", loop: true)
+            } label: {
+                Image("sound")
+                    .resizable()
+                    .frame(width: 40, height: 40)
+            }
             
             NavigationLink(destination: SettingsScreen()) {
                 Image("settings")
@@ -78,6 +75,13 @@ extension WelcomeScreen {
                     .frame(width: 40, height: 40)
             }
         }
+    }
+    
+    private func createRandomCategory() -> Category {
+        let allWords = categories.categories.flatMap { $0.words }
+        let randomWords = Array(allWords.shuffled().prefix(6))
+        let randomCategory = Category(name: "Random", image: "", words: randomWords)
+        return randomCategory
     }
     
 }
