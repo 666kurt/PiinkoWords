@@ -16,7 +16,6 @@ struct GameScreen: View {
     }
     
     var body: some View {
-        
         if gameLogic.currentWordIndex < gameLogic.category.words.count {
             let currentWord = gameLogic.category.words[gameLogic.currentWordIndex]
             
@@ -44,16 +43,11 @@ struct GameScreen: View {
             .onAppear {
                 gameLogic.shuffledLetters = currentWord.text.shuffled()
                 startTimer()
-                
-                audioManager.loadSound(named: "bgSound", withExtension: "mp3")
-                audioManager.playSound(named: "bgSound", loop: true)
             }
             .overlay(
                 Group {
                     if showLosePopup {
                         GameLosePopUpView(showPopUp: $showLosePopup)
-//                        audioManager.loadSound(named: "loseSound", withExtension: "wav")
-//                        audioManager.playSound(named: "loseSound")
                     }
                     if showCompletionPopup, let finalTime = finalTime {
                         GameWinPopUpView(showPopUp: $showCompletionPopup,
@@ -87,7 +81,6 @@ struct GameScreen: View {
                 .clipShape(Capsule())
         }
     }
-    
     
     // Сброс игры после поражения
     private func resetGameAfterLoss() {
@@ -130,6 +123,7 @@ struct GameScreen: View {
             }
         }
     }
+    
 }
 
 #Preview {

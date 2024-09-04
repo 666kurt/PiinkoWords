@@ -4,8 +4,6 @@ struct SplashScreen: View {
     
     @State private var progress: CGFloat = 0.0
     @State private var isActive: Bool = false
-    @Binding var showOnboarding: Bool
-
     
     var body: some View {
         GeometryReader { geometry in
@@ -39,11 +37,7 @@ struct SplashScreen: View {
             startLoading()
         }
         .fullScreenCover(isPresented: $isActive) {
-            if showOnboarding {
-                OnboardingScreen(showOnboarding: $showOnboarding)
-            } else {
-                WelcomeScreen()
-            }
+            WelcomeScreen()
         }
     }
     
@@ -60,5 +54,5 @@ struct SplashScreen: View {
 }
 
 #Preview {
-    SplashScreen(showOnboarding: .constant(true))
+    SplashScreen()
 }

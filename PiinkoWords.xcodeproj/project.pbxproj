@@ -7,13 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC5D0F2B2C80886B00823694 /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D0F2A2C80886B00823694 /* OnboardingScreen.swift */; };
 		FC5D0F2D2C809C5400823694 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5D0F2C2C809C5400823694 /* AudioManager.swift */; };
-		FC5D0F302C80A73000823694 /* welcomeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC5D0F2F2C80A73000823694 /* welcomeSound.mp3 */; };
-		FC5D0F352C80ABD700823694 /* loseSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = FC5D0F312C80ABD700823694 /* loseSound.wav */; };
-		FC5D0F362C80ABD700823694 /* bgSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC5D0F322C80ABD700823694 /* bgSound.mp3 */; };
-		FC5D0F372C80ABD700823694 /* winSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC5D0F332C80ABD700823694 /* winSound.mp3 */; };
-		FC5D0F382C80ABD700823694 /* exitSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FC5D0F342C80ABD700823694 /* exitSound.mp3 */; };
 		FC78B8C82C7346A80044DEAE /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8C72C7346A80044DEAE /* GameScreen.swift */; };
 		FC78B8CB2C7348100044DEAE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8CA2C7348100044DEAE /* Category.swift */; };
 		FC78B8CD2C73484A0044DEAE /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8CC2C73484A0044DEAE /* Word.swift */; };
@@ -38,16 +32,15 @@
 		FCEA253D2C6F49EA00EE59F0 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA253C2C6F49EA00EE59F0 /* SettingsScreen.swift */; };
 		FCEA25402C6F4B4D00EE59F0 /* CustomVStackModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA253F2C6F4B4D00EE59F0 /* CustomVStackModifier.swift */; };
 		FCEA25442C6F4E3500EE59F0 /* SettingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA25432C6F4E3500EE59F0 /* SettingButtonView.swift */; };
+		FCF3969C2C88550100654705 /* loseSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = FCF396972C88550100654705 /* loseSound.wav */; };
+		FCF3969D2C88550100654705 /* welcomeSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FCF396982C88550100654705 /* welcomeSound.mp3 */; };
+		FCF3969E2C88550100654705 /* winSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FCF396992C88550100654705 /* winSound.mp3 */; };
+		FCF3969F2C88550100654705 /* exitSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FCF3969A2C88550100654705 /* exitSound.mp3 */; };
+		FCF396A02C88550100654705 /* bgSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FCF3969B2C88550100654705 /* bgSound.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FC5D0F2A2C80886B00823694 /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		FC5D0F2C2C809C5400823694 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
-		FC5D0F2F2C80A73000823694 /* welcomeSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = welcomeSound.mp3; path = ../../../../../Downloads/welcomeSound.mp3; sourceTree = "<group>"; };
-		FC5D0F312C80ABD700823694 /* loseSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = loseSound.wav; path = ../../../../../Downloads/loseSound.wav; sourceTree = "<group>"; };
-		FC5D0F322C80ABD700823694 /* bgSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bgSound.mp3; path = ../../../../../Downloads/bgSound.mp3; sourceTree = "<group>"; };
-		FC5D0F332C80ABD700823694 /* winSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = winSound.mp3; path = ../../../../../Downloads/winSound.mp3; sourceTree = "<group>"; };
-		FC5D0F342C80ABD700823694 /* exitSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = exitSound.mp3; path = ../../../../../Downloads/exitSound.mp3; sourceTree = "<group>"; };
 		FC78B8C72C7346A80044DEAE /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
 		FC78B8CA2C7348100044DEAE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		FC78B8CC2C73484A0044DEAE /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
@@ -73,6 +66,11 @@
 		FCEA253C2C6F49EA00EE59F0 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		FCEA253F2C6F4B4D00EE59F0 /* CustomVStackModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVStackModifier.swift; sourceTree = "<group>"; };
 		FCEA25432C6F4E3500EE59F0 /* SettingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButtonView.swift; sourceTree = "<group>"; };
+		FCF396972C88550100654705 /* loseSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = loseSound.wav; sourceTree = "<group>"; };
+		FCF396982C88550100654705 /* welcomeSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = welcomeSound.mp3; sourceTree = "<group>"; };
+		FCF396992C88550100654705 /* winSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = winSound.mp3; sourceTree = "<group>"; };
+		FCF3969A2C88550100654705 /* exitSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = exitSound.mp3; sourceTree = "<group>"; };
+		FCF3969B2C88550100654705 /* bgSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgSound.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,11 +87,11 @@
 		FC5D0F2E2C80A71500823694 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				FC5D0F332C80ABD700823694 /* winSound.mp3 */,
-				FC5D0F312C80ABD700823694 /* loseSound.wav */,
-				FC5D0F342C80ABD700823694 /* exitSound.mp3 */,
-				FC5D0F322C80ABD700823694 /* bgSound.mp3 */,
-				FC5D0F2F2C80A73000823694 /* welcomeSound.mp3 */,
+				FCF396982C88550100654705 /* welcomeSound.mp3 */,
+				FCF396992C88550100654705 /* winSound.mp3 */,
+				FCF396972C88550100654705 /* loseSound.wav */,
+				FCF3969A2C88550100654705 /* exitSound.mp3 */,
+				FCF3969B2C88550100654705 /* bgSound.mp3 */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -155,7 +153,6 @@
 				FCEA253E2C6F4B3F00EE59F0 /* Modifiers */,
 				FC78B8D42C7369E50044DEAE /* Helpers */,
 				FCEA25352C6F3B0000EE59F0 /* Extensions */,
-				FCEA25452C6F5BC500EE59F0 /* Font */,
 				FC5D0F2E2C80A71500823694 /* Music */,
 				FCEA25262C6F3A0500EE59F0 /* Preview Content */,
 			);
@@ -221,7 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				FC78B8E82C7524CE0044DEAE /* SplashScreen.swift */,
-				FC5D0F2A2C80886B00823694 /* OnboardingScreen.swift */,
 			);
 			path = "Onboarding&Splash";
 			sourceTree = "<group>";
@@ -267,13 +263,6 @@
 				FCEA25432C6F4E3500EE59F0 /* SettingButtonView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		FCEA25452C6F5BC500EE59F0 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,12 +324,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCEA25282C6F3A0500EE59F0 /* Preview Assets.xcassets in Resources */,
-				FC5D0F382C80ABD700823694 /* exitSound.mp3 in Resources */,
+				FCF3969D2C88550100654705 /* welcomeSound.mp3 in Resources */,
 				FCEA25252C6F3A0500EE59F0 /* Assets.xcassets in Resources */,
-				FC5D0F302C80A73000823694 /* welcomeSound.mp3 in Resources */,
-				FC5D0F362C80ABD700823694 /* bgSound.mp3 in Resources */,
-				FC5D0F352C80ABD700823694 /* loseSound.wav in Resources */,
-				FC5D0F372C80ABD700823694 /* winSound.mp3 in Resources */,
+				FCF3969C2C88550100654705 /* loseSound.wav in Resources */,
+				FCF3969F2C88550100654705 /* exitSound.mp3 in Resources */,
+				FCF3969E2C88550100654705 /* winSound.mp3 in Resources */,
+				FCF396A02C88550100654705 /* bgSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +354,6 @@
 				FC78B8D32C73528F0044DEAE /* BackgroundCardModifier.swift in Sources */,
 				FC78B8E52C74ABFE0044DEAE /* GameExitPopUpView.swift in Sources */,
 				FC78B8C82C7346A80044DEAE /* GameScreen.swift in Sources */,
-				FC5D0F2B2C80886B00823694 /* OnboardingScreen.swift in Sources */,
 				FC78B8D82C736AB90044DEAE /* GameLettersView.swift in Sources */,
 				FC78B8DE2C73B6590044DEAE /* GameLogic.swift in Sources */,
 				FC78B8DC2C73B3E70044DEAE /* ShakeEffect.swift in Sources */,

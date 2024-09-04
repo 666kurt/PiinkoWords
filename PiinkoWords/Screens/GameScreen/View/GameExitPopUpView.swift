@@ -44,8 +44,6 @@ struct GameExitPopUpView: View {
                 }
                 
             }
-            .offset(y: showPopUp ? 0 : UIScreen.main.bounds.height)
-            .animation(.spring(), value: showPopUp)
         }
         .onAppear() {
             audioManager.loadSound(named: "exitSound", withExtension: "mp3")

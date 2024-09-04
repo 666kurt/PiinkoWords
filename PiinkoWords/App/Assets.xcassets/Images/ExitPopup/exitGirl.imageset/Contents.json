@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "the-girl-with-glasses-is-crying-a-lot.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

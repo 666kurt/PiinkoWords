@@ -24,11 +24,9 @@ struct SettingsScreen: View {
                 
                 VStack(spacing: 16) {
                     SettingButtonView(title: "Usage policy",
-                                      url: "https://google.com")
-                    SettingButtonView(title: "Share app",
-                                      url: "https://google.com")
-                    SettingButtonView(title: "Rate us",
-                                      url: "https://google.com")
+                                      url: "https://www.termsfeed.com/live/01754f43-ab45-4265-9f3b-36848ab21321")
+                    SettingButtonView(title: "Terms of use",
+                                      url: "https://www.termsfeed.com/live/01300ceb-51c7-4af0-b19b-f8d01ae54346")
                 }
             }
             
