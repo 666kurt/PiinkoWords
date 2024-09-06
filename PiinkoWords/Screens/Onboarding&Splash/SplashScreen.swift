@@ -9,7 +9,7 @@ struct SplashScreen: View {
         GeometryReader { geometry in
             ZStack {
                 
-                Color(hex: "#000B71").ignoresSafeArea()
+                Color(hex: "#FDA7FF").ignoresSafeArea()
                 
                 VStack(spacing: 100) {
                     Image("splashGirl")
@@ -20,7 +20,7 @@ struct SplashScreen: View {
                     ZStack(alignment: .leading) {
                         Rectangle()
                             .frame(height: 12)
-                            .foregroundColor(Color(hex: "#2F19C8"))
+                            .foregroundColor(Color.white)
                         
                         Rectangle()
                             .frame(width: progress, height: 12)

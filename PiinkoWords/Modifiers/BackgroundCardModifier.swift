@@ -12,11 +12,11 @@ struct BackgroundCardModifier: ViewModifier {
         .padding(.bottom, 20)
         .background(
             LinearGradient(colors: [
-            Color(hex: "#0D00A1"),
-            Color(hex: "#320083"),
+            Color(hex: "#FFFFFF"),
+            Color(hex: "#FFA0FB"),
             ],
-                           startPoint: .leading,
-                           endPoint: .trailing)
+                           startPoint: .topLeading,
+                           endPoint: .bottomTrailing)
         )
         .clipShape(RoundedRectangle(cornerRadius: 20))
     }

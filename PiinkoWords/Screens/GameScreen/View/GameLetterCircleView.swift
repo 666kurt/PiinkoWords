@@ -14,7 +14,7 @@ struct GameLetterCircleView: View {
             
             ZStack {
                 Circle()
-                    .fill(Color(hex: "#5B41FF"))
+                    .fill(Color(hex: "#FA2BFF"))
                     .frame(width: circleSize, height: circleSize)
                 
                 ForEach(gameLogic.shuffledLetters.indices, id: \.self) { index in

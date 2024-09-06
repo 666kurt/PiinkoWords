@@ -16,13 +16,13 @@ struct GameLettersView: View {
                 .overlay(
                     Text(selectedLetters.indices.contains(index) ? selectedLetters[index] : "")
                         .font(.system(size: 32, weight: .semibold))
-                        .foregroundColor(Color(hex: "#5B41FF"))
+                        .foregroundColor(Color(hex: "#940085"))
                 )
             }
         }
         .padding(7)
         .frame(maxWidth: .infinity)
-        .background(Color(hex: "#5B41FF"))
+        .background(Color(hex: "#FA2BFF"))
         .clipShape(Capsule())
     }
 }

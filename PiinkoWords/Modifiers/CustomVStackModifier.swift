@@ -6,7 +6,7 @@ struct CustomVStackModifier: ViewModifier {
             .padding(.horizontal, 28)
             .padding(.top, 10)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            .background(Color(hex: "#000B71").ignoresSafeArea())
+            .background(Color.white.ignoresSafeArea())
             .navigationBarBackButtonHidden()
     }
 }

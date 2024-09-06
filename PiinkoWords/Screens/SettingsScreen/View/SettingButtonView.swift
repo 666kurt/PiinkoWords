@@ -12,8 +12,8 @@ struct SettingButtonView: View {
                 .foregroundColor(.white)
                 .padding(.vertical)
                 .frame(maxWidth: .infinity)
-                .background(Color(hex: "#1800AE"))
-                .clipShape(Capsule())
+                .background(Color(hex: "#A80079"))
+                .clipShape(RoundedRectangle(cornerRadius: 6))
         })
     }
 }

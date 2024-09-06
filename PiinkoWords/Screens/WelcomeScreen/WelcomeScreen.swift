@@ -43,36 +43,40 @@ extension WelcomeScreen {
     
     private var headerView: some View {
         HStack {
-            HStack() {
-                NavigationLink {
-                    let randomWordsCategory = createRandomCategory()
-                    GameScreen(category: randomWordsCategory)
-                        .environmentObject(audioManager)
-                } label: {
-                    Text("Random")
-                        .font(.system(size: 24, weight: .bold))
-                        .foregroundColor(.white)
-                }
+            
+            NavigationLink(destination: SettingsScreen()) {
+                Image("settings")
+                    .renderingMode(.template)
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .foregroundColor(Color(hex: "#A80079"))
             }
-            .padding(.vertical, 8)
-            .padding(.trailing, 8)
-            .padding(.leading, 12)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color(hex: "##1800AE"))
-            .clipShape(Capsule())
             
             Button {
                 audioManager.toggleSound(named: "welcomeSound", loop: true)
             } label: {
                 Image("sound")
+                    .renderingMode(.template)
                     .resizable()
                     .frame(width: 40, height: 40)
+                    .foregroundColor(Color(hex: "#A80079"))
             }
             
-            NavigationLink(destination: SettingsScreen()) {
-                Image("settings")
-                    .resizable()
-                    .frame(width: 40, height: 40)
+            
+            NavigationLink {
+                let randomWordsCategory = createRandomCategory()
+                GameScreen(category: randomWordsCategory)
+                    .environmentObject(audioManager)
+            } label: {
+                Text("Random")
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundColor(.white)
+                    .padding(.vertical, 8)
+                    .padding(.trailing, 8)
+                    .padding(.leading, 12)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(Color(hex: "#A80079"))
+                    .clipShape(RoundedRectangle(cornerRadius: 6))
             }
         }
     }

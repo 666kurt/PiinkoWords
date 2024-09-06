@@ -1,5 +1,12 @@
 import SwiftUI
 
+enum PopUpType {
+    case none
+    case win
+    case lose
+    case exit
+}
+
 final class GameLogic: ObservableObject {
     
     @ObservedObject var category: Category
@@ -49,7 +56,7 @@ final class GameLogic: ObservableObject {
     
     func nextWord() {
         if selectedLetters.map({ $0.letter }).joined() == category.words[currentWordIndex].text {
-            category.guessedWordsCount += 1
+            category.guessedWordsCount = min(category.guessedWordsCount + 1, category.words.count)
         }
 
         if currentWordIndex < category.words.count - 1 {
@@ -60,7 +67,6 @@ final class GameLogic: ObservableObject {
             currentWordIndex = category.words.count
         }
     }
-
     
     func resetGame() {
         currentWordIndex = 0
