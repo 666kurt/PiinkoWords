@@ -24,6 +24,7 @@
 		FC78B8E32C74A5800044DEAE /* GameWinPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8E22C74A5800044DEAE /* GameWinPopUpView.swift */; };
 		FC78B8E52C74ABFE0044DEAE /* GameExitPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8E42C74ABFE0044DEAE /* GameExitPopUpView.swift */; };
 		FC78B8E92C7524CE0044DEAE /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC78B8E82C7524CE0044DEAE /* SplashScreen.swift */; };
+		FC8336072C8F177600F3DA4C /* OnboardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8336062C8F177600F3DA4C /* OnboardingScreen.swift */; };
 		FCEA25212C6F3A0400EE59F0 /* PiinkoWordsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA25202C6F3A0400EE59F0 /* PiinkoWordsApp.swift */; };
 		FCEA25232C6F3A0400EE59F0 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEA25222C6F3A0400EE59F0 /* WelcomeScreen.swift */; };
 		FCEA25252C6F3A0500EE59F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEA25242C6F3A0500EE59F0 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		FC78B8E22C74A5800044DEAE /* GameWinPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWinPopUpView.swift; sourceTree = "<group>"; };
 		FC78B8E42C74ABFE0044DEAE /* GameExitPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameExitPopUpView.swift; sourceTree = "<group>"; };
 		FC78B8E82C7524CE0044DEAE /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		FC8336062C8F177600F3DA4C /* OnboardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen.swift; sourceTree = "<group>"; };
 		FCEA251D2C6F3A0400EE59F0 /* PiinkoWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiinkoWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEA25202C6F3A0400EE59F0 /* PiinkoWordsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiinkoWordsApp.swift; sourceTree = "<group>"; };
 		FCEA25222C6F3A0400EE59F0 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				FC78B8E82C7524CE0044DEAE /* SplashScreen.swift */,
+				FC8336062C8F177600F3DA4C /* OnboardingScreen.swift */,
 			);
 			path = "Onboarding&Splash";
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				FC5D0F2D2C809C5400823694 /* AudioManager.swift in Sources */,
 				FC78B8E92C7524CE0044DEAE /* SplashScreen.swift in Sources */,
 				FC78B8D12C734FC30044DEAE /* GameToolBarView.swift in Sources */,
+				FC8336072C8F177600F3DA4C /* OnboardingScreen.swift in Sources */,
 				FC78B8CD2C73484A0044DEAE /* Word.swift in Sources */,
 				FCEA253D2C6F49EA00EE59F0 /* SettingsScreen.swift in Sources */,
 				FCEA253A2C6F3C1A00EE59F0 /* Color+extensions.swift in Sources */,
@@ -507,6 +511,7 @@
 				DEVELOPMENT_TEAM = CTY44DYVYJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Words piinco - connect wisely";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -541,6 +546,7 @@
 				DEVELOPMENT_TEAM = CTY44DYVYJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Words piinco - connect wisely";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
