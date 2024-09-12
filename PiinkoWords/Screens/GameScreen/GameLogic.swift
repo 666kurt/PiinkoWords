@@ -1,80 +1,80 @@
 import SwiftUI
 
 enum PopUpType {
-    case none
-    case win
-    case lose
-    case exit
+    case x1
+    case x2
+    case x3
+    case x4
 }
 
 final class GameLogic: ObservableObject {
     
-    @ObservedObject var category: Category
-    @Published var currentWordIndex = 0
-    @Published var selectedLetters: [(letter: String, index: Int)] = []
-    @Published var selectedLetterPositions: [CGPoint] = []
-    @Published var shuffledLetters: [Character] = []
-    @Published var correctLetters: Set<Int> = []
-    @Published var canProceedToNextWord = false
+    @ObservedObject var cat: Category
+    @Published var cwi = 0
+    @Published var sll: [(letter: String, index: Int)] = []
+    @Published var lpos: [CGPoint] = []
+    @Published var shltr: [Character] = []
+    @Published var corltrs: Set<Int> = []
+    @Published var cpnwrds = false
         
     init(category: Category) {
-        self.category = category
-        self.shuffledLetters = category.words[currentWordIndex].text.shuffled()
+        self.cat = category
+        self.shltr = category.words[cwi].text.shuffled()
     }
 
-    func handleLetterSelection(letter: String, letterPosition: CGPoint, letterIndex: Int) {
-            let currentWord = category.words[currentWordIndex].text
+    func hls(letter: String, letterPosition: CGPoint, letterIndex: Int) {
+            let currwowo = cat.words[cwi].text
             
-            let alreadySelectedCount = selectedLetters.filter { $0.letter == letter }.count
-            let totalOccurrencesInWord = currentWord.filter { String($0) == letter }.count
+            let alreadySelectedCount = sll.filter { $0.letter == letter }.count
+            let totalOccurrencesInWord = currwowo.filter { String($0) == letter }.count
             
-            if currentWord.contains(letter) && alreadySelectedCount < totalOccurrencesInWord && !selectedLetters.contains(where: { $0.index == letterIndex }) {
-                selectedLetters.append((letter: letter, index: letterIndex))
-                selectedLetterPositions.append(letterPosition)
-                correctLetters.insert(letterIndex)
+            if currwowo.contains(letter) && alreadySelectedCount < totalOccurrencesInWord && !sll.contains(where: { $0.index == letterIndex }) {
+                sll.append((letter: letter, index: letterIndex))
+                lpos.append(letterPosition)
+                corltrs.insert(letterIndex)
             }
             
-            if selectedLetters.map({ $0.letter }).joined() == currentWord {
-                canProceedToNextWord = true
-            } else if selectedLetters.count == currentWord.count && selectedLetters.map({ $0.letter }).joined() != currentWord {
-                triggerVibration()
-                resetSelection()
+            if sll.map({ $0.letter }).joined() == currwowo {
+                cpnwrds = true
+            } else if sll.count == currwowo.count && sll.map({ $0.letter }).joined() != currwowo {
+                tv()
+                rs()
             }
         }
     
-    private func triggerVibration() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.error)
+    private func tv() {
+        let gnrt = UINotificationFeedbackGenerator()
+        gnrt.notificationOccurred(.error)
     }
     
-    func resetSelection() {
-        selectedLetters.removeAll()
-        selectedLetterPositions.removeAll()
-        correctLetters.removeAll()
-        canProceedToNextWord = false
+    func rs() {
+        sll.removeAll()
+        lpos.removeAll()
+        corltrs.removeAll()
+        cpnwrds = false
     }
     
-    func nextWord() {
-        if selectedLetters.map({ $0.letter }).joined() == category.words[currentWordIndex].text {
-            category.guessedWordsCount = min(category.guessedWordsCount + 1, category.words.count)
+    func nw() {
+        if sll.map({ $0.letter }).joined() == cat.words[cwi].text {
+            cat.guessedWordsCount = min(cat.guessedWordsCount + 1, cat.words.count)
         }
 
-        if currentWordIndex < category.words.count - 1 {
-            currentWordIndex += 1
-            resetSelection()
-            shuffledLetters = category.words[currentWordIndex].text.shuffled()
+        if cwi < cat.words.count - 1 {
+            cwi += 1
+            rs()
+            shltr = cat.words[cwi].text.shuffled()
         } else {
-            currentWordIndex = category.words.count
+            cwi = cat.words.count
         }
     }
     
-    func resetGame() {
-        currentWordIndex = 0
-        resetSelection()
-        shuffledLetters = category.words[currentWordIndex].text.shuffled()
+    func rg() {
+        cwi = 0
+        rs()
+        shltr = cat.words[cwi].text.shuffled()
     }
 
-    func boundaryPoint(from: CGPoint, to: CGPoint, radius: CGFloat = 40) -> CGPoint {
+    func bp(from: CGPoint, to: CGPoint, radius: CGFloat = 40) -> CGPoint {
         let vector = CGPoint(x: to.x - from.x, y: to.y - from.y)
         let length = sqrt(vector.x * vector.x + vector.y * vector.y)
         let unitVector = CGPoint(x: vector.x / length, y: vector.y / length)

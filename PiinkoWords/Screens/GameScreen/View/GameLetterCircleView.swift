@@ -17,9 +17,9 @@ struct GameLetterCircleView: View {
                     .fill(Color(hex: "#FA2BFF"))
                     .frame(width: circleSize, height: circleSize)
                 
-                ForEach(gameLogic.shuffledLetters.indices, id: \.self) { index in
-                    let letter = String(gameLogic.shuffledLetters[index])
-                    let letterPosition = LetterPositionCalculator.positionForLetters(index: index, total: gameLogic.shuffledLetters.count, center: circleCenter, radius: radius)
+                ForEach(gameLogic.shltr.indices, id: \.self) { index in
+                    let letter = String(gameLogic.shltr[index])
+                    let letterPosition = LetterPositionCalculator.positionForLetters(index: index, total: gameLogic.shltr.count, center: circleCenter, radius: radius)
                     
                     Image("circlePink")
                         .resizable()
@@ -29,18 +29,18 @@ struct GameLetterCircleView: View {
                                 .font(.system(size: circleRadius * 0.6, weight: .semibold))
                                 .foregroundColor(Color(hex: "#5B41FF"))
                         )
-                        .shadow(color: gameLogic.correctLetters.contains(index) ? .red : .clear, radius: radius * 0.1)
+                        .shadow(color: gameLogic.corltrs.contains(index) ? .red : .clear, radius: radius * 0.1)
                         .position(letterPosition)
                         .onTapGesture {
-                            gameLogic.handleLetterSelection(letter: letter, letterPosition: letterPosition, letterIndex: index)
+                            gameLogic.hls(letter: letter, letterPosition: letterPosition, letterIndex: index)
                         }
                 }
                 
-                if gameLogic.selectedLetterPositions.count > 1 {
+                if gameLogic.lpos.count > 1 {
                     Path { path in
-                        for i in 0..<gameLogic.selectedLetterPositions.count - 1 {
-                            let start = gameLogic.selectedLetterPositions[i]
-                            let end = gameLogic.selectedLetterPositions[i + 1]
+                        for i in 0..<gameLogic.lpos.count - 1 {
+                            let start = gameLogic.lpos[i]
+                            let end = gameLogic.lpos[i + 1]
                             let startBoundary = LetterPositionCalculator.boundaryPoint(from: start, to: end, radius: circleRadius / 2)
                             let endBoundary = LetterPositionCalculator.boundaryPoint(from: end, to: start, radius: circleRadius / 2)
                             path.move(to: startBoundary)

@@ -15,7 +15,7 @@ struct GameToolBarView: View {
         HStack {
             Button {
                 stopGameTimer()
-                showExitPopup = .exit
+                showExitPopup = .x4
             } label: {
                 Image("back")
                     .resizable()

@@ -6,7 +6,7 @@ struct GameScreen: View {
     @ObservedObject var gameLogic: GameLogic
     @StateObject private var audioManager = AudioManager.shared
     @State private var timeRemaining = 60
-    @State private var activePopUp: PopUpType = .none
+    @State private var activePopUp: PopUpType = .x1
     @State private var finalTime: Int? = nil
     @State private var gameTimer: Timer? = nil
     @State private var confettiCounter = 0
@@ -17,12 +17,12 @@ struct GameScreen: View {
     }
 
     var body: some View {
-        if gameLogic.currentWordIndex < gameLogic.category.words.count {
-            let currentWord = gameLogic.category.words[gameLogic.currentWordIndex]
+        if gameLogic.cwi < gameLogic.cat.words.count {
+            let currentWord = gameLogic.cat.words[gameLogic.cwi]
 
             VStack(spacing: 15) {
 
-                GameToolBarView(category: gameLogic.category,
+                GameToolBarView(category: gameLogic.cat,
                                 timeRemaining: $timeRemaining,
                                 showWinPopup: .constant(false),
                                 showLosePopup: .constant(false),
@@ -32,32 +32,32 @@ struct GameScreen: View {
                 Image(currentWord.image)
                     .backgroundCardModifier()
 
-                GameLettersView(selectedLetters: gameLogic.selectedLetters.map { $0.letter },
+                GameLettersView(selectedLetters: gameLogic.sll.map { $0.letter },
                                 totalLetters: currentWord.text.count)
 
                 GameLetterCircleView(gameLogic: gameLogic)
 
                 nextButtonView
-                    .disabled(!gameLogic.canProceedToNextWord)
+                    .disabled(!gameLogic.cpnwrds)
             }
             .customVStack()
             .onAppear {
-                gameLogic.shuffledLetters = currentWord.text.shuffled()
+                gameLogic.shltr = currentWord.text.shuffled()
                 startTimer()
             }
             .overlay(
                 Group {
-                    if activePopUp == .lose {
+                    if activePopUp == .x3 {
                         GameLosePopUpView(showPopUp: Binding(
-                            get: { activePopUp == .lose },
-                            set: { if !$0 { activePopUp = .none } }
+                            get: { activePopUp == .x3 },
+                            set: { if !$0 { activePopUp = .x1 } }
                         ))
                     }
-                    if activePopUp == .win, let finalTime = finalTime {
+                    if activePopUp == .x2, let finalTime = finalTime {
                         ZStack {
                             GameWinPopUpView(showPopUp: Binding(
-                                get: { activePopUp == .win },
-                                set: { if !$0 { activePopUp = .none } }
+                                get: { activePopUp == .x2 },
+                                set: { if !$0 { activePopUp = .x1 } }
                             ), elapsedTime: finalTime)
                             
                             ConfettiCannon(counter: $confettiCounter, num: 100, radius: 300.0)
@@ -66,10 +66,10 @@ struct GameScreen: View {
                             confettiCounter += 1
                         }
                     }
-                    if activePopUp == .exit {
+                    if activePopUp == .x4 {
                         GameExitPopUpView(showPopUp: Binding(
-                            get: { activePopUp == .exit },
-                            set: { if !$0 { activePopUp = .none } }
+                            get: { activePopUp == .x4 },
+                            set: { if !$0 { activePopUp = .x1 } }
                         ), elapsedTime: 60 - timeRemaining, onContinue: resumeGame)
                     }
                 }
@@ -79,13 +79,13 @@ struct GameScreen: View {
 
     private var nextButtonView: some View {
         Button {
-            if gameLogic.currentWordIndex == gameLogic.category.words.count - 1 {
+            if gameLogic.cwi == gameLogic.cat.words.count - 1 {
                 finalTime = 60 - timeRemaining
-                activePopUp = .win
+                activePopUp = .x2
                 stopTimer()
                 confettiCounter += 1
             } else {
-                gameLogic.nextWord()
+                gameLogic.nw()
             }
         } label: {
             Text("Next")
@@ -99,11 +99,11 @@ struct GameScreen: View {
     }
 
     private func resetGameAfterLoss() {
-        gameLogic.currentWordIndex = 0
-        gameLogic.resetSelection()
+        gameLogic.cwi = 0
+        gameLogic.rs()
         timeRemaining = 60
-        activePopUp = .none
-        gameLogic.shuffledLetters = gameLogic.category.words[gameLogic.currentWordIndex].text.shuffled()
+        activePopUp = .x1
+        gameLogic.shltr = gameLogic.cat.words[gameLogic.cwi].text.shuffled()
         startTimer()
     }
 
@@ -113,7 +113,7 @@ struct GameScreen: View {
             if timeRemaining > 0 {
                 timeRemaining -= 1
             } else {
-                activePopUp = .lose
+                activePopUp = .x3
                 timer.invalidate()
             }
         }
