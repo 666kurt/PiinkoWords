@@ -56,15 +56,15 @@ struct GameExitPopUpView: View {
                 audioManager.playSound(named: "welcomeSound", loop: true)
             }
         }
-        .overlay(
-            Image("exitGirl")
-                .resizable()
-                .scaledToFit()
-                .offset(y: 155)
-                .scaleEffect(CGSize(width: 0.7, height: 0.7))
-                .offset(y: offsetY),
-            alignment: .bottom
-        )
+//        .overlay(
+//            Image("exitGirl")
+//                .resizable()
+//                .scaledToFit()
+//                .offset(y: 155)
+//                .scaleEffect(CGSize(width: 0.7, height: 0.7))
+//                .offset(y: offsetY),
+//            alignment: .bottom
+//        )
     }
     
     private func hidePopup() {

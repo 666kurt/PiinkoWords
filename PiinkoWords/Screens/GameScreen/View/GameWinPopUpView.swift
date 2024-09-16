@@ -55,13 +55,13 @@ struct GameWinPopUpView: View {
                 audioManager.playSound(named: "welcomeSound", loop: true)
             }
         }
-        .overlay(Image("winGirl")
-            .resizable()
-            .scaledToFit()
-            .offset(x: -200, y: 450)
-            .scaleEffect(CGSize(width: 0.5, height: 0.5))
-            .offset(y: offsetY)
-                 , alignment: .bottom)
+//        .overlay(Image("winGirl")
+//            .resizable()
+//            .scaledToFit()
+//            .offset(x: -200, y: 450)
+//            .scaleEffect(CGSize(width: 0.5, height: 0.5))
+//            .offset(y: offsetY)
+//                 , alignment: .bottom)
     }
     
     private func hidePopup() {
